@@ -1,0 +1,27 @@
+{
+    "hotel_id": "1",
+    "title": "Test Hotel",
+    "description": "This is a test hotel description",
+    "guest_count": 4,
+    "bedroom_count": 2,
+    "bathroom_count": 1,
+    "amenities": ["WiFi", "Parking"],
+    "host_information": {
+      "name": "John Doe",
+      "contact": "test@example.com"
+    },
+    "address": "123 Test St",
+    "latitude": 0,
+    "longitude": 0,
+    "images": ["https://via.placeholder.com/800x600"],
+    "rooms": [
+      {
+        "room_title": "Deluxe Room",
+        "room_image": "https://via.placeholder.com/800x600",
+        "bedroom_count": 1,
+        "hotel_slug": "test-hotel",
+        "room_slug": "deluxe-room"
+      }
+    ]
+  }
+  

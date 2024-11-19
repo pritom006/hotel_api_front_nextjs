@@ -13,7 +13,7 @@ interface RoomCardProps {
 const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="relative h-48">
+      {/* <div className="relative h-48">
         <img
           src={room.room_image}
           alt={room.room_title}
@@ -23,7 +23,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
             target.src = '/placeholder-room.jpg'; // Add a placeholder image in your public folder
           }}
         />
-      </div>
+      </div> */}
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{room.room_title}</h3>
         <p className="text-gray-600">

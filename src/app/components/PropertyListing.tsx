@@ -65,16 +65,86 @@ const PropertyListing = () => {
           Juneau Vacation Home: Stunning View + Beach Access
         </h3>
         
-        <p className="text-sm leading-relaxed text-gray-600 mb-6">
+        <p className="text-sm leading-relaxed text-gray-600 mb-8">
           Escape to the mountains and experience the great outdoors at this lovely Juneau vacation rental! 
           Perched on the shore of Lena Cove, this 2-bedroom, 1-bath home is the perfect getaway for those 
-          looking to enjoy a relaxing retreat surrounded by nature.
+          looking to enjoy a relaxing retreat surrounded by nature. Spend your day fishing for King Salmon, 
+          exploring Lena Beach and the rocky coastline, or hiking the nearby trails. After your outdoor 
+          adventure, kick back on the private deck and admire the breathtaking panoramic views!
         </p>
 
-        <div className="space-y-4">
-          <div className="font-medium text-sm text-gray-800">-- THE PROPERTY --</div>
-          <div className="text-sm text-gray-600">
-            CSL1000104 | 1,115 Sq Ft | 2 Private Decks | Lena Cove & Mountain Views | 2 Bicycles Provided
+        <div className="space-y-6">
+          {/* Property Section */}
+          <div className="space-y-4">
+            <div className="font-medium text-sm text-gray-800">-- THE PROPERTY --</div>
+            <div className="text-sm text-gray-600">
+              CSL1000104 | 1,115 Sq Ft | 2 Private Decks | Lena Cove & Mountain Views | 2 Bicycles Provided
+            </div>
+            
+            <div className="text-sm text-gray-600">
+              Bedroom 1: Queen Bed, Full Floor Mattress | Bedroom 2: Extra Long Twin Bed
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-sm text-gray-600">HOME HIGHLIGHTS: Flat screen TV, dining table, washer/dryer</div>
+              <div className="text-sm text-gray-600">KITCHEN: Fridge, stove, coffee maker, microwave, cooking basics, toaster, dishware/flatware, trash bags/paper towels, Crockpot</div>
+              <div className="text-sm text-gray-600">GENERAL: Free WiFi, central heating, linens/towels, keyless entry, hair dryer, ceiling fans</div>
+              <div className="text-sm text-gray-600">FAQ: No A/C, stairs required to access</div>
+              <div className="text-sm text-gray-600">PARKING: Driveway (2 vehicles), RV parking allowed</div>
+            </div>
+          </div>
+
+          {/* Location Section */}
+          <div className="space-y-4">
+            <div className="font-medium text-sm text-gray-800">-- THE LOCATION --</div>
+            <div className="space-y-2">
+              <div className="text-sm text-gray-600">GREAT OUTDOORS: Lena Cove (on-site), Lena Beach Recreation Area (0.5 miles), Glacier Gardens Rainforest Adventure (10 miles), Mendenhall Glacier (10 miles), Twin Lakes (13 miles)</div>
+              <div className="text-sm text-gray-600">THINGS TO DO: Mendenhall Golf (8 miles), Dimond Park Aquatic Center (8 miles), Riverside Rotary Park (5 miles), Alaska State Museum (16 miles), Last Chance Mining Museum (18 miles), AJ Mine Gastineau Mill Tours (20 miles)</div>
+              <div className="text-sm text-gray-600">LOCAL FARE: Forbidden Peak Brewery (5 miles), The Grind Coffee Company (7 miles), Four Plates Cocina Peruana (7 miles), Sandbar & Gril (7 miles), Zerelca's Bistro (8 miles), Donna's Restaurant (9 miles), Alaskan Brewing Co. (13 miles)</div>
+              <div className="text-sm text-gray-600">AIRPORT: Juneau International Airport (9 miles)</div>
+            </div>
+          </div>
+
+          {/* Rest Easy Section */}
+          <div className="space-y-4">
+            <div className="font-medium text-sm text-gray-800">-- REST EASY WITH US --</div>
+            <p className="text-sm leading-relaxed text-gray-600">
+              Evolve makes it easy to find and book properties you'll never want to leave. You can relax knowing 
+              that our properties will always be ready for you and that we'll answer the phone 24/7. Even better, 
+              if anything is off about your stay, we'll make it right. You can count on our homes and our people to 
+              make you feel welcome—because we know what vacation means to you.
+            </p>
+          </div>
+
+          {/* Policies Section */}
+          <div className="space-y-4">
+            <div className="font-medium text-sm text-gray-800">-- POLICIES --</div>
+            <ul className="text-sm text-gray-600 space-y-2">
+              <li>• No smoking</li>
+              <li>• No pets allowed</li>
+              <li>• No events, parties, or large gatherings</li>
+              <li>• Must be at least 25 years old to book</li>
+              <li>• Additional fees and taxes may apply</li>
+              <li>• Photo ID may be required upon check-in</li>
+              <li>• NOTE: The property requires stairs to access</li>
+              <li>• NOTE: The property does not have air conditioning</li>
+              <li>• NOTE: The property sleeps 3 guests in 2 beds, with room for 4 total by using the full floor mattress</li>
+            </ul>
+          </div>
+
+          {/* Property Manager Section */}
+          <div className="space-y-4">
+            <h3 className="text-base font-medium text-gray-800">Property manager</h3>
+            <div className="flex items-center gap-2">
+              <div className="text-2xl">🏠</div>
+              <div className="text-sm text-gray-600">Evolve</div>
+            </div>
+          </div>
+
+          {/* Languages Section */}
+          <div className="space-y-4">
+            <h3 className="text-base font-medium text-gray-800">Languages</h3>
+            <div className="text-sm text-gray-600">English, French, German, Spanish</div>
           </div>
         </div>
       </section>

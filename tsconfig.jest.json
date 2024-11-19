@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "types": ["jest", "@testing-library/jest-dom"], // Add Jest-specific types
+      "baseUrl": ".", // Required for path aliases
+      "paths": {
+        "@/*": ["src/*"]
+      }
+    },
+    "include": ["**/*.test.ts", "**/*.test.tsx"]
+  }
+  

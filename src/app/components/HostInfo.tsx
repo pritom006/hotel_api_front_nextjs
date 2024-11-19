@@ -17,7 +17,7 @@ interface HostSectionProps {
 
 const HostSection: React.FC<HostSectionProps> = ({ hostInfo }) => {
   return (
-    <div className="max-w-7xl mx-auto px-8 font-sans">
+    <div className="max-w-7xl ml-20 px-8 font-sans">
       <section className="border-t border-b border-gray-200 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Left Column */}
@@ -66,3 +66,6 @@ const HostSection: React.FC<HostSectionProps> = ({ hostInfo }) => {
 };
 
 export default HostSection;
+
+
+

@@ -1,108 +1,17 @@
-// import React from 'react';
-// import { FiShare2, FiHeart } from 'react-icons/fi';
-
-// const HeaderSection: React.FC = () => {
-//   return (
-//     <div className="flex justify-between items-center my-4">
-//       <button className="text-blue-600 text-sm underline">{'<- See all properties'}</button>
-//       <div className="flex space-x-4">
-//         <button className="flex items-center space-x-1 text-gray-600">
-//           <FiShare2 />
-//           <span>Share</span>
-//         </button>
-//         <button className="flex items-center space-x-1 text-gray-600">
-//           <FiHeart />
-//           <span>Save</span>
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HeaderSection;
-
-
-// import React, { useState } from 'react';
-// import { FiShare2, FiHeart } from 'react-icons/fi';
-
-// const HeaderSection: React.FC = () => {
-//   const [showShareModal, setShowShareModal] = useState(false);
-//   const [isSaved, setIsSaved] = useState(false);
-
-//   const handleCopyLink = () => {
-//     navigator.clipboard.writeText(window.location.href);
-//     alert('Link copied to clipboard!');
-//   };
-
-//   const toggleSave = () => {
-//     setIsSaved(!isSaved);
-//     localStorage.setItem('isSaved', JSON.stringify(!isSaved));
-//   };
-
-//   return (
-//     <div className="flex justify-between items-center my-4">
-//       <button className="text-blue-600 text-sm underline">{'<- See all properties'}</button>
-//       <div className="flex space-x-4">
-//         {/* Share Button */}
-//         <button
-//           className="flex items-center space-x-1 text-gray-600"
-//           onClick={() => setShowShareModal(true)}
-//         >
-//           <FiShare2 />
-//           <span>Share</span>
-//         </button>
-
-//         {/* Save Button */}
-//         <button
-//           className={`flex items-center space-x-1 ${
-//             isSaved ? 'text-red-600' : 'text-gray-600'
-//           }`}
-//           onClick={toggleSave}
-//         >
-//           <FiHeart />
-//           <span>{isSaved ? 'Saved' : 'Save'}</span>
-//         </button>
-//       </div>
-
-//       {/* Share Modal */}
-//       {showShareModal && (
-//         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-//           <div className="bg-white p-6 rounded shadow-lg w-80">
-//             <h2 className="text-lg font-bold mb-4">Share</h2>
-//             <div className="flex justify-around">
-//               <button className="text-blue-600">Facebook</button>
-//               <button className="text-green-600">WhatsApp</button>
-//               <button
-//                 className="text-gray-600"
-//                 onClick={handleCopyLink}
-//               >
-//                 Copy Link
-//               </button>
-//             </div>
-//             <button
-//               onClick={() => setShowShareModal(false)}
-//               className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
-//             >
-//               Close
-//             </button>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default HeaderSection;
-
 
 import React, { useState, useEffect } from 'react';
-import { FiShare2, FiHeart } from 'react-icons/fi';
+import { FiShare2, FiHeart, FiX } from 'react-icons/fi';
+import Image from 'next/image';
+import { FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookMessenger } from "react-icons/fa";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { HiLink } from "react-icons/hi";
 
 const HeaderSection: React.FC = () => {
   const [showShareModal, setShowShareModal] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
 
-  // On component mount, fetch the saved state from localStorage
   useEffect(() => {
     const savedState = localStorage.getItem('isSaved');
     if (savedState) {
@@ -127,46 +36,107 @@ const HeaderSection: React.FC = () => {
       <div className="flex space-x-4">
         {/* Share Button */}
         <button
-          className="flex items-center space-x-1 text-gray-600"
+          className="flex items-center space-x-1 text-gray-600 border-black rounded-full"
           onClick={() => setShowShareModal(true)}
         >
-          <FiShare2 />
+          <FiShare2 className="text-lg" />
           <span>Share</span>
         </button>
 
         {/* Save Button */}
         <button
-          className={`flex items-center space-x-1 ${
-            isSaved ? 'text-red-600' : 'text-gray-600'
-          }`}
+          className="flex items-center space-x-1 text-gray-600 border-green rounded-full"
           onClick={toggleSave}
         >
-          <FiHeart />
-          <span>{isSaved ? 'Saved' : 'Save'}</span>
+          <FiHeart className={`text-lg ${isSaved ? 'fill-red-500 text-red-500' : ''}`} />
+          <span>Save</span>
         </button>
       </div>
 
       {/* Share Modal */}
       {showShareModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-6 rounded shadow-lg w-80">
-            <h2 className="text-lg font-bold mb-4">Share</h2>
-            <div className="flex justify-around">
-              <button className="text-blue-600">Facebook</button>
-              <button className="text-green-600">WhatsApp</button>
-              <button
-                className="text-gray-600"
-                onClick={handleCopyLink}
-              >
-                Copy Link
-              </button>
-            </div>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg shadow-lg w-[380px] relative">
+            {/* Close button */}
             <button
               onClick={() => setShowShareModal(false)}
-              className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+              className="absolute top-2 left-2 p-2 hover:bg-gray-100 rounded-full"
             >
-              Close
+              <FiX className="text-xl" />
             </button>
+            
+            {/* Modal header with Share text */}
+            <div className="text-center py-4 border-b">
+              <h2 className="font-semibold">Share</h2>
+            </div>
+
+            {/* Property preview */}
+            <div className="p-4 flex gap-3">
+              <Image
+                src="/juneau.jpeg" 
+                alt="Property"
+                width={100}
+                height={100}
+                className="rounded-lg object-cover"
+              />
+              <div>
+                <h3 className="font-bold text-lg">Juneau Vacation Home: Stunning View + Beach Access</h3>
+                <div className="flex items-center mt-1">
+                  <span className="text-sm text-gray-600">United States of America</span>
+                </div>
+                <div className="flex items-center mt-1">
+                  <span className="text-sm text-gray-600">5.0/10</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Share options */}
+            <div className="grid grid-cols-3 gap-4 p-4">
+              <button className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                  <IoChatbubbleEllipsesOutline className="text-2xl text-blue-600" />
+                </div>
+                <span className="text-sm">Messages</span>
+              </button>
+
+              <button className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                  <FaWhatsapp className="text-2xl text-green-600" />
+                </div>
+                <span className="text-sm">WhatsApp</span>
+              </button>
+
+              <button className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                  <FaFacebookMessenger className="text-2xl text-blue-600" />
+                </div>
+                <span className="text-sm">Messenger</span>
+              </button>
+
+              <button className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                  <FaFacebookF className="text-2xl text-blue-600" />
+                </div>
+                <span className="text-sm">Facebook</span>
+              </button>
+
+              <button className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                  <FaXTwitter className="text-2xl" />
+                </div>
+                <span className="text-sm">X</span>
+              </button>
+
+              <button 
+                className="flex flex-col items-center gap-2"
+                onClick={handleCopyLink}
+              >
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                  <HiLink className="text-2xl" />
+                </div>
+                <span className="text-sm">Copy link</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

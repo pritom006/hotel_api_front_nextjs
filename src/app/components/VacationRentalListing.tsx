@@ -49,45 +49,62 @@ const VacationRentalListing = () => {
 
       {/* Cancellation Section */}
       <section className="mb-12 flex items-start gap-12">
-        <h2 className="text-xl font-semibold text-gray-800 min-w-[120px]">Cancellation</h2>
-        <div className="flex-1">
-          <div className="bg-gray-50 p-8 rounded-lg mb-8">
-            <div className="flex justify-between text-sm text-gray-600 mb-4">
-              <span>Full refund</span>
-              <span>No refund</span>
-            </div>
-            <div className="relative h-0.5 bg-gray-200 mb-8">
-              <div className="absolute left-0 top-0 h-full w-1/2 bg-black"></div>
-            </div>
-            <div className="flex justify-between relative">
-              {['Today', 'Nov 4', 'Check-in'].map((label, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-3 h-3 rounded-full border-2 border-black bg-white mx-auto mb-4"></div>
-                  <span className="text-sm text-gray-600">{label}</span>
-                </div>
-              ))}
-            </div>
+      <h2 className="text-xl font-semibold text-gray-800 min-w-[120px]">Cancellation</h2>
+      <div className="flex-1">
+        <div className="bg-gray-50 p-8 rounded-lg mb-8">
+          <div className="flex justify-between text-sm text-gray-600 mb-4">
+            <span>Full refund</span>
+            <span>No refund</span>
           </div>
-
-          <div className="border-b border-gray-200 pb-6 mb-6">
-            <div className="flex gap-12">
-              <span className="text-sm text-gray-600 min-w-[120px]">Before Nov 4</span>
-              <div>
-                <h3 className="text-base font-semibold text-gray-900 mb-2">Full refund</h3>
-                <p className="text-sm text-gray-600">Cancel your reservation before Nov 4 at 11:59 PM, and you'll get a full refund. Times are based on the property's local time.</p>
+          <div className="relative mb-8">
+            {/* Container for line and points */}
+            <div className="relative">
+              {/* Background line */}
+              <div className="absolute left-0 right-0 h-0.5 bg-gray-300 top-[6px]"></div>
+              {/* Filled line */}
+              <div className="absolute left-0 w-1/2 h-0.5 bg-black top-[6px]"></div>
+              
+              {/* Points and labels container */}
+              <div className="relative flex justify-between">
+                {['Today', 'Nov 4', 'Check-in'].map((label, index) => (
+                  <div 
+                    key={index} 
+                    className={`flex flex-col items-center ${
+                      index === 0 ? 'translate-x-[-12px]' : 
+                      index === 2 ? '-translate-x-[-18px]' : ''
+                    }`}
+                  >
+                    <div className="w-3 h-3 rounded-full border-2 border-black bg-white mb-4"></div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">{label}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+        </div>
 
+        <div className="border-b border-gray-200 pb-6 mb-6">
           <div className="flex gap-12">
-            <span className="text-sm text-gray-600 min-w-[120px]">After Nov 4</span>
+            <span className="text-sm text-gray-600 min-w-[120px]">Before Nov 4</span>
             <div>
-              <h3 className="text-base font-semibold text-gray-900 mb-2">No refund</h3>
-              <p className="text-sm text-gray-600">After that, you won't get a refund.</p>
+              <h3 className="text-base font-semibold text-gray-900 mb-2">Full refund</h3>
+              <p className="text-sm text-gray-600">
+                Cancel your reservation before Nov 4 at 11:59 PM, and you'll get a full refund. 
+                Times are based on the property's local time.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+
+        <div className="flex gap-12">
+          <span className="text-sm text-gray-600 min-w-[120px]">After Nov 4</span>
+          <div>
+            <h3 className="text-base font-semibold text-gray-900 mb-2">No refund</h3>
+            <p className="text-sm text-gray-600">After that, you won't get a refund.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
       {/* Reviews Section */}
       <section className="mb-12 flex items-start gap-12">
