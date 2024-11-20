@@ -1,6 +1,6 @@
 # Hotel Management System Frontend
 
-This project is a frontend application for managing hotel and room details using **Node.js**, **ReactJS**, and **PostgreSQL**.
+This project is a frontend application for managing hotel and room details using **Node.js**, **ReactJS**, and **nextjs**.
 
 ---
 
